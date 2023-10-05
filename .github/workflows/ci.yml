@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
+      - run: npm install -g @angular/cli
       - run: yarn install --immutable
       - run: yarn build
       - run: yarn workspace @n/services test
