@@ -36,7 +36,17 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+turbo-build.log
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

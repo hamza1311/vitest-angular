@@ -3,29 +3,29 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vite-angular": {
+    "client": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
+      "root": "client",
+      "sourceRoot": "client",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/vite-angular",
-            "index": "src/index.html",
-            "main": "src/main.ts",
+            "outputPath": "dist/client",
+            "index": "client/index.html",
+            "main": "client/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "client/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "client/favicon.ico",
+              "client/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "client/styles.css"
             ],
             "scripts": []
           },
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "vite-angular:build:production"
+              "browserTarget": "client:build:production"
             },
             "development": {
-              "browserTarget": "vite-angular:build:development"
+              "browserTarget": "client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vite-angular:build"
+            "browserTarget": "client:build"
           }
         },
         "test": {
@@ -93,6 +93,42 @@
           }
         }
       }
+    },
+    "@n/services": {
+      "projectType": "library",
+      "root": "client/app/modules/services",
+      "sourceRoot": "client/app/modules/services/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "client/app/modules/services/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "client/app/modules/services/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "client/app/modules/services/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "client/app/modules/services/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "packageManager": "yarn"
   }
 }
