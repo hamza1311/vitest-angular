@@ -17,5 +17,5 @@ jobs:
           node-version: 18
           cache: 'yarn'
       - run: yarn install --immutable
-      - run: turbo build
+      - run: yarn build
       - run: yarn workspace @n/services test

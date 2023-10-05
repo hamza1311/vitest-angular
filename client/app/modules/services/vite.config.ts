@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     // Vitest browser config
     browser: {
       enabled: true,
-      name: 'firefox',
+      name: 'chromium',
       headless: true, // set to true in CI
       provider: 'playwright',
     },
