@@ -5,6 +5,7 @@
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.5",
+    "@angular/cli": "^16.2.5",
     "@angular/compiler-cli": "^16.2.0",
     "@nx/vite": "^16.10.0",
     "ng-packagr": "^16.2.0",
