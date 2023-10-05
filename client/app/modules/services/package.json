@@ -2,11 +2,19 @@
   "name": "@n/services",
   "version": "0.0.1",
   "scripts": {
-    "build": "ng build @n/services"
+    "build": "ng build @n/services",
+    "test": "ng test @n/services"
   },
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
+  },
+  "devDependencies": {
+    "@analogjs/vite-plugin-angular": "^0.2.11",
+    "@vitest/browser": "^0.34.6",
+    "playwright": "^1.38.1",
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^0.34.6"
   },
   "dependencies": {
     "tslib": "^2.3.0"
