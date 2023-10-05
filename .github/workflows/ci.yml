@@ -19,4 +19,5 @@ jobs:
       - run: npm install -g @angular/cli
       - run: yarn install --immutable
       - run: yarn build
+      - run: npx playwright install
       - run: ng test @n/services
