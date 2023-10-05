@@ -21,4 +21,4 @@ jobs:
       - run: yarn build
       - run: npx playwright install
       - run: vitest
-        working_directory: client/app/modules/services
+        working-directory: client/app/modules/services
